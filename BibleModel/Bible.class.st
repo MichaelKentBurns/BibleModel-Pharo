@@ -27,8 +27,8 @@ Bible >> addBook: aBook [
 	"comment stating purpose of instance-side method"
 	"scope: class-variables  &  instance-variables"
 	
-	books ifNil: { books := Array new }.
-	books add: aBook.
+	books ifNil: { books := OrderedCollection new }.
+	books addLast: aBook.
 ]
 
 { #category : 'adding' }
@@ -36,8 +36,8 @@ Bible >> addTestament: aTestament [
 	"comment stating purpose of instance-side method"
 	"scope: class-variables  &  instance-variables"
 
-	testaments ifNil: { testaments := [ ] }.
-	testaments += aTestament.
+	testaments ifNil: { testaments := OrderedCollection new }.
+	testaments addLast: aTestament.
 ]
 
 { #category : 'accessing' }

@@ -15,8 +15,8 @@ Testament >> addBook: aBook [
 	"comment stating purpose of instance-side method"
 	"scope: class-variables  &  instance-variables"
 	
-	books ifNil: { books := Array new }.
-	books add: aBook.
+	books ifNil: { books := OrderedCollection new }.
+	books addLast: aBook.
 ]
 
 { #category : 'accessing' }
