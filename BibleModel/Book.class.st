@@ -1,89 +1,68 @@
 "
-An online version of a Study Bible.
+A Book is ultimately a sequence of words with appropriate punctuation.
+In modern forms it is composed of a sequence of chapters. 
+Books are normally attributed to a single human author.
 
-Responsibilities:
-	Provide access to all contained parts.
-	
-Collaborators:
-	Testments
-	Books
-	
+
 "
 Class {
-	#name : 'Bible',
+	#name : 'Book',
 	#superclass : 'Object',
 	#instVars : [
+		'number',
 		'name',
-		'translation',
-		'testaments',
-		'books'
+		'author',
+		'nChapters',
+		'chapters'
 	],
 	#category : 'BibleModel',
 	#package : 'BibleModel'
 }
 
-{ #category : 'adding' }
-Bible >> addBook: aBook [
-	"comment stating purpose of instance-side method"
-	"scope: class-variables  &  instance-variables"
-	
-	books ifNil: { books := Array new }.
-	books add: aBook.
-]
-
-{ #category : 'adding' }
-Bible >> addTestament: aTestament [
+{ #category : 'accessing' }
+Book >> author [
 	"comment stating purpose of instance-side method"
 	"scope: class-variables  &  instance-variables"
 
-	testaments ifNil: { testaments := [ ] }.
-	testaments += aTestament.
+	^ author
 ]
 
 { #category : 'accessing' }
-Bible >> books [
+Book >> author: aName [
 	"comment stating purpose of instance-side method"
 	"scope: class-variables  &  instance-variables"
 
-	^ books.
+	author := aName
 ]
 
 { #category : 'accessing' }
-Bible >> name [
+Book >> name [
 	"comment stating purpose of instance-side method"
 	"scope: class-variables  &  instance-variables"
-	^ name.
 
+	^ name
 ]
 
 { #category : 'accessing' }
-Bible >> name: aString [
+Book >> name: aName [
 	"comment stating purpose of instance-side method"
 	"scope: class-variables  &  instance-variables"
-name := aString.
 
+	name := aName
 ]
 
 { #category : 'accessing' }
-Bible >> testaments [
+Book >> number [
 	"comment stating purpose of instance-side method"
 	"scope: class-variables  &  instance-variables"
 
-	^ testaments.
+	^ number
 ]
 
 { #category : 'accessing' }
-Bible >> translation [
+Book >> number: anInteger [
 	"comment stating purpose of instance-side method"
 	"scope: class-variables  &  instance-variables"
-	^ translation.
 
-]
-
-{ #category : 'accessing' }
-Bible >> translation: aString [
-	"comment stating purpose of instance-side method"
-	"scope: class-variables  &  instance-variables"
-translation := aString.
-
+	number := anInteger 
 ]

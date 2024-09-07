@@ -1,21 +1,9 @@
-"
-An online version of a Study Bible.
-
-Responsibilities:
-	Provide access to all contained parts.
-	
-Collaborators:
-	Testments
-	Books
-	
-"
 Class {
-	#name : 'Bible',
+	#name : 'Testament',
 	#superclass : 'Object',
 	#instVars : [
 		'name',
-		'translation',
-		'testaments',
+		'number',
 		'books'
 	],
 	#category : 'BibleModel',
@@ -23,7 +11,7 @@ Class {
 }
 
 { #category : 'adding' }
-Bible >> addBook: aBook [
+Testament >> addBook: aBook [
 	"comment stating purpose of instance-side method"
 	"scope: class-variables  &  instance-variables"
 	
@@ -31,17 +19,8 @@ Bible >> addBook: aBook [
 	books add: aBook.
 ]
 
-{ #category : 'adding' }
-Bible >> addTestament: aTestament [
-	"comment stating purpose of instance-side method"
-	"scope: class-variables  &  instance-variables"
-
-	testaments ifNil: { testaments := [ ] }.
-	testaments += aTestament.
-]
-
 { #category : 'accessing' }
-Bible >> books [
+Testament >> books [
 	"comment stating purpose of instance-side method"
 	"scope: class-variables  &  instance-variables"
 
@@ -49,41 +28,33 @@ Bible >> books [
 ]
 
 { #category : 'accessing' }
-Bible >> name [
+Testament >> name [
 	"comment stating purpose of instance-side method"
 	"scope: class-variables  &  instance-variables"
-	^ name.
 
+	^name.
 ]
 
 { #category : 'accessing' }
-Bible >> name: aString [
+Testament >> name: aString [
 	"comment stating purpose of instance-side method"
 	"scope: class-variables  &  instance-variables"
-name := aString.
 
+	name := aString.
 ]
 
 { #category : 'accessing' }
-Bible >> testaments [
+Testament >> number [
 	"comment stating purpose of instance-side method"
 	"scope: class-variables  &  instance-variables"
 
-	^ testaments.
+	^number.
 ]
 
 { #category : 'accessing' }
-Bible >> translation [
+Testament >> number: anInteger [
 	"comment stating purpose of instance-side method"
 	"scope: class-variables  &  instance-variables"
-	^ translation.
 
-]
-
-{ #category : 'accessing' }
-Bible >> translation: aString [
-	"comment stating purpose of instance-side method"
-	"scope: class-variables  &  instance-variables"
-translation := aString.
-
+	number := anInteger.
 ]
