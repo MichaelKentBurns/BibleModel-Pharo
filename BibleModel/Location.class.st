@@ -14,25 +14,30 @@ Class {
 		'verse',
 		'description'
 	],
+	#classVars : [
+		'bookMultiplier',
+		'chapterMultiplier',
+		'verseMultiplier'
+	],
 	#category : 'BibleModel',
 	#package : 'BibleModel'
 }
 
 { #category : 'private - constants' }
 Location class >> bookMultipler [
-	"comment stating purpose of class-side method"
-	^ 1,000,000 .
+	"book number is in the millions range"
+	^ 1000000 .
 ]
 
 { #category : 'private - constants' }
 Location class >> chapterMultipler [
-	"comment stating purpose of class-side method"
-	^ 1,000 .
+	"chapter number is in the thousands range"
+	^ 1000 .
 ]
 
 { #category : 'private - constants' }
 Location class >> verseMultipler [
-	"comment stating purpose of class-side method"
+	"verse number is in the singles range "
 	^ 1 .
 ]
 
@@ -109,9 +114,12 @@ Location >> number: anInteger [
 { #category : 'accessing' }
 Location >> setNumber [
 	"calculate number from book,chapter,verse"
-	
-	| bookMultiplier chapterMultiplier verseMultiplier |
-	number := (book * bookMultiplier) + ( chapter * chapterMultiplier) + ( verse * verseMultiplier).
+	| b c v |
+	b := ( book * bookMultiplier).
+	c := ( chapter * chapterMultiplier).
+	v := ( verse *  verseMultiplier).
+	number := b + c + v.
+	^ self.
 ]
 
 { #category : 'accessing' }
