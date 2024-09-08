@@ -15,9 +15,9 @@ Class {
 		'description'
 	],
 	#classVars : [
-		'bookMultiplier',
-		'chapterMultiplier',
-		'verseMultiplier'
+		'XbookMultiplier',
+		'XchapterMultiplier',
+		'XverseMultiplier'
 	],
 	#category : 'BibleModel',
 	#package : 'BibleModel'
@@ -55,6 +55,12 @@ Location >> book: anInteger [
 	book := anInteger.
 ]
 
+{ #category : 'private - constants' }
+Location >> bookMultiplier [
+	"book number is in the millions range"
+	^ 1000000 .
+]
+
 { #category : 'accessing' }
 Location >> chapter [
 	"chapter number within book"
@@ -67,6 +73,12 @@ Location >> chapter: anInteger [
 	"chapter number within book"
 	
 	chapter := anInteger.
+]
+
+{ #category : 'private - constants' }
+Location >> chapterMultiplier [
+	"chapter number is in the thousands range"
+	^ 1000 .
 ]
 
 { #category : 'accessing' }
@@ -114,10 +126,13 @@ Location >> number: anInteger [
 { #category : 'accessing' }
 Location >> setNumber [
 	"calculate number from book,chapter,verse"
-	| b c v |
-	b := ( book * bookMultiplier).
-	c := ( chapter * chapterMultiplier).
-	v := ( verse *  verseMultiplier).
+	| bm cm vm b c v |
+	bm := self bookMultiplier.
+	cm := self chapterMultiplier.
+	vm := self verseMultiplier.
+	b := ( book * bm ).
+	c := ( chapter * cm ).
+	v := ( verse *  vm ).
 	number := b + c + v.
 	^ self.
 ]
@@ -134,4 +149,10 @@ Location >> verse: anInteger [
 	"verse number within chapter"
 	
 	verse := anInteger.
+]
+
+{ #category : 'private - constants' }
+Location >> verseMultiplier [
+	"verse number is in the singles range "
+	^ 1 .
 ]

@@ -7,12 +7,8 @@ Class {
 
 { #category : 'tests' }
 LocationTest >> testLocationHasNumber [
-	| aLoc bLoc bMult cMult vMult |
+	| aLoc bLoc |
 	aLoc := Location new.
-	
-	bMult := aLoc class bookMultipler.
-	cMult := aLoc class chapterMultipler.
-	vMult := aLoc class verseMultipler.
 	
 	aLoc number: 40028018.
 	self assert: aLoc number equals: 40028018 .
