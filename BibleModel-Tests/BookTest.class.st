@@ -5,8 +5,8 @@ Class {
 	#package : 'BibleModel-Tests'
 }
 
-{ #category : 'accessing' }
-BookTest >> bookHasNumber [
+{ #category : 'tests' }
+BookTest >> testBookHasNumber [
 	| aBook |
 	aBook := Book new.
 	aBook number: 1.
