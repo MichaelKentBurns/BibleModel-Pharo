@@ -18,7 +18,12 @@ LocationTest >> testLocationHasNumber [
 				book: 40;
 				chapter: 28;
 				verse: 18.
-		bLoc  setNumber.
+		bLoc  calculateNumber .
 	self assert: aLoc number equals: bLoc number.
-	
+	self assert: aLoc book equals: bLoc book.
+	self assert: aLoc chapter equals: bLoc chapter.
+	self assert: aLoc verse equals: bLoc verse.
+
+
+
 ]

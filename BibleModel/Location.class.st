@@ -62,6 +62,20 @@ Location >> bookMultiplier [
 ]
 
 { #category : 'accessing' }
+Location >> calculateNumber [
+	"calculate number from book,chapter,verse"
+	| bm cm vm b c v |
+	bm := self bookMultiplier.
+	cm := self chapterMultiplier.
+	vm := self verseMultiplier.
+	b := ( book * bm ).
+	c := ( chapter * cm ).
+	v := ( verse *  vm ).
+	number := b + c + v.
+	^ number.
+]
+
+{ #category : 'accessing' }
 Location >> chapter [
 	"chapter number within book"
 	
@@ -79,6 +93,18 @@ Location >> chapter: anInteger [
 Location >> chapterMultiplier [
 	"chapter number is in the thousands range"
 	^ 1000 .
+]
+
+{ #category : 'accessing' }
+Location >> decodeNumber [
+	"breaks the composit number into book, chapter, and verse"
+	
+	| cv |
+	book := number // self bookMultiplier.
+	cv := number \\ self bookMultiplier.
+	chapter := cv // self chapterMultiplier.
+	verse := cv \\ self chapterMultiplier. 
+	^ self.
 ]
 
 { #category : 'accessing' }
@@ -121,20 +147,8 @@ Location >> number: anInteger [
 	"numerical location within Bible"
 	
 	number := anInteger.
-]
-
-{ #category : 'accessing' }
-Location >> setNumber [
-	"calculate number from book,chapter,verse"
-	| bm cm vm b c v |
-	bm := self bookMultiplier.
-	cm := self chapterMultiplier.
-	vm := self verseMultiplier.
-	b := ( book * bm ).
-	c := ( chapter * cm ).
-	v := ( verse *  vm ).
-	number := b + c + v.
-	^ self.
+	self decodeNumber.
+	^ number.
 ]
 
 { #category : 'accessing' }
