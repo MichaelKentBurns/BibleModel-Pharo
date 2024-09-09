@@ -49,6 +49,30 @@ Book >> author: aName [
 ]
 
 { #category : 'accessing' }
+Book >> chapters [
+
+	^ chapters
+]
+
+{ #category : 'accessing' }
+Book >> chapters: anObject [
+
+	chapters := anObject
+]
+
+{ #category : 'accessing' }
+Book >> nChapters [
+
+	^ nChapters
+]
+
+{ #category : 'accessing' }
+Book >> nChapters: anObject [
+
+	nChapters := anObject
+]
+
+{ #category : 'accessing' }
 Book >> name [
 	"comment stating purpose of instance-side method"
 	"scope: class-variables  &  instance-variables"
