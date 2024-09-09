@@ -1,3 +1,11 @@
+"
+A collection of sacred writings from a specific faith community.
+
+Most notable are the Jewish Old Testament and the Christian New Testament.
+
+Each testament, like the Bible itself, is a collection of books which are the modern representation of a scroll, a collection of loose pages either tied together or bound into a codex. 
+
+"
 Class {
 	#name : 'Testament',
 	#superclass : 'Object',

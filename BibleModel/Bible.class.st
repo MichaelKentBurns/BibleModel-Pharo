@@ -2,11 +2,11 @@
 An online version of a Study Bible.
 
 Responsibilities:
-	Provide access to all contained parts.
+*	Provide access to all contained parts.
 	
 Collaborators:
-	Testments
-	Books
+*	Testments
+*	Books
 	
 "
 Class {
