@@ -1,7 +1,20 @@
 "
+A holy writing considered as part of the Canon of a faith.
 A Book is ultimately a sequence of words with appropriate punctuation.
 In modern forms it is composed of a sequence of chapters. 
 Books are normally attributed to a single human author.
+
+Responsibilities:
+	The formal name.
+	A longer descriptive name.
+	Abbreviations for the name.
+	The name of the author.
+	Introductory text. 
+
+Collaborators: 
+	The Bible that contains this book.
+	The Testament that contains this book.
+	Chapters - A sequence of numbered chapters that form this book.
 
 
 "
